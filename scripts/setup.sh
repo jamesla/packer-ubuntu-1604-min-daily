@@ -8,14 +8,6 @@ wget --no-check-certificate 'https://raw.github.com/mitchellh/vagrant/master/key
 chmod 600 ~/.ssh/authorized_keys
 chown -R vagrant ~/.ssh
 
-# Apt cleanup.
-apt-get update
-apt-get -y upgrade
-apt-get -y autoremove
-
-# Delete unneeded files.
-rm -f /home/vagrant/*.sh
-
 # Zero out the rest of the free space using dd, then delete the written file.
 dd if=/dev/zero of=/EMPTY bs=1M
 rm -f /EMPTY
