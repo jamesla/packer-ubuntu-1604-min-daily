@@ -1,4 +1,7 @@
 {
+    "variables": {
+        "ACCESS_TOKEN": ""
+    },
     "provisioners": [
         {
             "type": "shell",
@@ -132,7 +135,7 @@
             {
                 "type": "vagrant-cloud",
                 "box_tag": "jamesla/ubuntu-1604-min-daily",
-                "access_token": "8R9iRbG2mbZ2AA.atlasv1.iU0N7TyMBzhwmmZEbegPEkJPo9i2MU0AwH23mtxf0Bg2so9GtbXuOH7QCIynwglsaR0",
+                "access_token": "{{user `ACCESS_TOKEN`}}",
                 "version": "0.0.1"
             }
         ]
