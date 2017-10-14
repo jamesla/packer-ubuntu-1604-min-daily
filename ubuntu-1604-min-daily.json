@@ -54,12 +54,10 @@
             "ssh_wait_timeout": "10000s",
             "shutdown_command": "echo 'vagrant'|sudo -S shutdown -P now",
             "parallels_tools_flavor": "lin",
-            "parallels_tools_guest_path": "/tmp/prl_tools.iso",
             "prlctl": [
                 [ "set", "{{.Name}}", "--device-set", "cdrom0", "--iface", "sata" ],
                 [ "set", "{{.Name}}", "--device-del", "sound0" ],
-                [ "set", "{{.Name}}", "--device-del", "usb" ],
-                [ "set", "{{.Name}}", "--videosize", "2" ]
+                [ "set", "{{.Name}}", "--device-del", "usb" ]
             ],
             "vm_name": "ubuntu-1604-min-daily"
         },

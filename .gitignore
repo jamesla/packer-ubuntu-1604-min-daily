@@ -1,4 +1,4 @@
 packer_cache/*
 *.box
 iso/*
-output-parallels-iso
+output-*
