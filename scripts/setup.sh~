@@ -26,7 +26,6 @@ HOME_DIR="${HOME_DIR:-/home/vagrant}";
 case "$PACKER_BUILDER_TYPE" in
     vmware-iso)
         apt-get install -y open-vm-tools-desktop;
-	mkdir /mnt/hgfs
 	;;
 esac
 
