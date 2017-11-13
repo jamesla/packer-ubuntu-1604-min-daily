@@ -19,9 +19,18 @@ chmod 600 /swapfile
 mkswap /swapfile
 swapon /swapfile
 
-# Install prl tools
+# Install tools
 HOME_DIR="${HOME_DIR:-/home/vagrant}";
 
+# Install vmware-open-tools 
+case "$PACKER_BUILDER_TYPE" in
+   	vmware-iso)
+       		apt-get install -y open-vm-tools;
+		mkdir /mnt/hgfs
+		;; 
+esac
+
+# Install parallel tools
 case "$PACKER_BUILDER_TYPE" in
     parallels-iso|parallels-pvm)
         mkdir -p /tmp/parallels;
