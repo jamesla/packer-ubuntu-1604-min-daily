@@ -22,12 +22,19 @@ swapon /swapfile
 # Install tools
 HOME_DIR="${HOME_DIR:-/home/vagrant}";
 
-# Install vmware-open-tools 
+# Install qemu-tools
+case "$PACKER_BUILDER_TYPE" in
+   	qemu)
+       	apt-get install -y qemu-guest-agent;
+        ;;
+esac
+
+# Install vmware-open-tools
 case "$PACKER_BUILDER_TYPE" in
    	vmware-iso)
        		apt-get install -y open-vm-tools;
 		mkdir /mnt/hgfs
-		;; 
+		;;
 esac
 
 # Install parallel tools
